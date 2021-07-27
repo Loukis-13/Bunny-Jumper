@@ -86,7 +86,7 @@ export default class Game extends Phaser.Scene
         )
 
         const style = { color: '#000', fontSize: 24 }
-        this.score = this.add.text(240, 10, 'Carrots: 0', style)
+        this.score = this.add.text(240, 10, 'Cenouras: 0', style)
             .setScrollFactor(0)
             .setOrigin(0.5, 0)
     }
@@ -101,6 +101,7 @@ export default class Game extends Phaser.Scene
             if (platform.y >= scrollY + 700)
             {
                 platform.y = scrollY - Phaser.Math.Between(50, 90)
+                platform.x = Phaser.Math.Between(80, 400)
                 platform.body.updateFromGameObject()
 
                 this.addCarrotAbove(platform)
@@ -218,7 +219,7 @@ export default class Game extends Phaser.Scene
 
         this.carrotsCollected++
 
-        this.score.text = "score: "+ this.carrotsCollected
+        this.score.text = "Cenouras: "+ this.carrotsCollected
     }
 
     findBottomMostPlatform()
